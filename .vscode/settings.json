@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "*.ll": "plaintext",
+        "qgraphicsitem": "cpp",
+        "qpoint": "cpp",
+        "qgraphicsscenemouseevent": "cpp",
+        "new": "cpp"
+    }
+}
