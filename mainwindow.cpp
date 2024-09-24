@@ -1,5 +1,43 @@
 #include "mainwindow.h"
 
+GraphicsView::GraphicsView(QGraphicsScene *scene, QWidget *parent = nullptr)
+    : QGraphicsView(scene, parent), currentComponent(nullptr), currentWire(nullptr), isPlacingComponent(false), isPlacingWire(false) {}
+
+void GraphicsView::mousePressEvent(QMouseEvent *event) {
+    if (event->button() == Qt::LeftButton) {
+        if (isPlacingComponent) {
+            // 放置元件
+            Component *newComponent = new Resistor();
+            scene()->addItem(newComponent);
+            newComponent->setPos(mapToScene(event->pos()));
+            isPlacingComponent = false;
+        } else if (isPlacingWire) {
+            // 开始放置连接线
+            if (currentWire == nullptr) {
+                currentWire = new Wire();
+                scene()->addItem(currentWire);
+                currentWire->setPos(mapToScene(event->pos()));
+            }
+        }
+    }
+}
+void GraphicsView::mouseMoveEvent(QMouseEvent *event) {
+    if (isPlacingWire && currentWire != nullptr) {
+        currentWire->updateGeometry();
+    }
+}
+void GraphicsView::mouseReleaseEvent(QMouseEvent *event) {
+    if (isPlacingWire && currentWire != nullptr) {
+        currentWire->updateGeometry();
+        isPlacingWire = false;
+    }
+}
+void GraphicsView::placeComponent() {
+    isPlacingComponent = true;
+}
+void GraphicsView::placeWire() {
+    isPlacingWire = true;
+}
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent) {
     InitToolBar();
@@ -48,7 +86,7 @@ void MainWindow::showToolBar(QToolBar* toolBar) {
 void MainWindow::InitGraph() {
     scene = new QGraphicsScene(this);
     scene->setSceneRect(-100,-100,400,400);
-    view = new QGraphicsView(scene);
+    view = new GraphicsView(scene, this);
     view->setRenderHint(QPainter::Antialiasing);
     view->setFixedSize(800,600);
     

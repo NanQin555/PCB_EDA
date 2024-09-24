@@ -4,6 +4,7 @@
         "qgraphicsitem": "cpp",
         "qpoint": "cpp",
         "qgraphicsscenemouseevent": "cpp",
-        "new": "cpp"
+        "new": "cpp",
+        "qpainter": "cpp"
     }
 }

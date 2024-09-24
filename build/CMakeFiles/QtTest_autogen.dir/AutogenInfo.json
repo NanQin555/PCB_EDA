@@ -73,9 +73,27 @@
 	"HEADERS" : 
 	[
 		[
+			"/home/nanqin/Project/QtTest/Component.hpp",
+			"MU",
+			"EWIEGA46WW/moc_Component.cpp",
+			null
+		],
+		[
 			"/home/nanqin/Project/QtTest/Rectangle.hpp",
 			"MU",
 			"EWIEGA46WW/moc_Rectangle.cpp",
+			null
+		],
+		[
+			"/home/nanqin/Project/QtTest/Resistor.hpp",
+			"MU",
+			"EWIEGA46WW/moc_Resistor.cpp",
+			null
+		],
+		[
+			"/home/nanqin/Project/QtTest/Wire.hpp",
+			"MU",
+			"EWIEGA46WW/moc_Wire.cpp",
 			null
 		],
 		[
