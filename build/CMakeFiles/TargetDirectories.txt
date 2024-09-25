@@ -1,4 +1,0 @@
-/home/nanqin/Project/QtTest/build/CMakeFiles/QtTest.dir
-/home/nanqin/Project/QtTest/build/CMakeFiles/edit_cache.dir
-/home/nanqin/Project/QtTest/build/CMakeFiles/rebuild_cache.dir
-/home/nanqin/Project/QtTest/build/CMakeFiles/QtTest_autogen.dir

@@ -1,3 +1,4 @@
+
 class Resistor : public Component {
 public:
     Resistor(QGraphicsItem *parent = nullptr) : Component(parent) {}
